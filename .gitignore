@@ -1,0 +1,18 @@
+# Carpetas
+build/
+*/build/
+**/CMakeCache.txt
+
+# Archivos de configuración
+sdkconfig
+sdkconfig.old
+
+# Binarios y compilados
+*.bin
+*.elf
+*.map
+*.log
+
+# Editor/IDE
+.vscode/
+.idea/
