@@ -60,16 +60,34 @@ void app_main(void)
 /*Function defintion -----------------------------------------------------------------------------------------*/
 void vTaskExample1(void *params){
     //Local variables 
-
+    uint32_t lastTemp = xTaskGetTickCount();
     //init 
     ESP_LOGI(TAG, "Tarea 1 iniciado");
     //loop
     for(;;){
-        vTaskDelay(pdMS_TO_TICKS(1000));
+        //vTaskDelay(pdMS_TO_TICKS(1000));
+        //code
+        //vTaskDelay(pdMS_TO_TICKS(1000));       //realmente genera un retardo de 1seg?
+
+        //millis()->arduino
+        //HAL_GetTick
+        TickType_t
+        if((xTaskGetTickCount() - lastTemp)>= pdMS_TO_TICKS(2000)){//2seg
+            lastTemp = xTaskGetTickCount(); //4100
+            //freq
+            
+        }
         //code
 
 
+
+
+
     }
+}
+
+void isr(void){
+    //semafaro entregas
 }
 
 
@@ -85,10 +103,10 @@ void vTaskExample2(void *params){
     ESP_LOGI(TAG, "%s iniciado", name);
     //loop
     for(;;){
-        vTaskDelay(pdMS_TO_TICKS(100));
+
+        //vTaskDelay(pdMS_TO_TICKS(100));
 
         //elimiaar tarea 1
-       
     }
 
     //terminar una tarea
