@@ -46,12 +46,12 @@ void app_main(void)
     sw2.config.pin_bit_mask = 1<<APP_BUTTON_SW2;
     sw2.pin = APP_BUTTON_SW2;
     //sw1
-    status = xTaskCreate(button_task_read_entry, "sw1", 4096, (const void *)&sw1, 3, &sw1_task);
+    status = xTaskCreate(button_task_read_entry, "sw1", 4096, (void * const)&sw1, 3, &sw1_task);
     if(status != pdPASS){
         ESP_LOGE(TAG, "Error al crear tarea sw1");
     }
     //sw2
-    status = xTaskCreate(button_task_read_entry, "sw2", 4096, (const void *)&sw2, 3, &sw2_task);
+    status = xTaskCreate(button_task_read_entry, "sw2", 4096, (void * const)&sw2, 3, &sw2_task);
     if(status != pdPASS){
         ESP_LOGE(TAG, "Error al crear tarea sw1");
     }

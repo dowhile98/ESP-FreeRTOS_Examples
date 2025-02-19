@@ -11,7 +11,7 @@
 #include "esp_system.h"
 #include "esp_log.h"
 #include "driver/gpio.h"
-#include "event_groups.h"
+#include "freertos/event_groups.h"
 typedef struct  app_button
 {
     gpio_config_t config;
